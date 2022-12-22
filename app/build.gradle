@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.panel.demo'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.panel.demo"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+/*repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven {url 'http://download.flutter.io'
+        allowInsecureProtocol = true}
+    maven {
+        url "/home/lt-183/Desktop/tudip-work/TAPPP/tappp_panel/build/host/outputs/repo"
+        //url "https://dev-tappp-panel.s3.us-east-2.amazonaws.com/build/host/outputs/repo/"
+    }
+    maven {
+        url "https://storage.googleapis.com/download.flutter.io"
+    }
+}*/
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation project(path: ':panellibrary')
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}

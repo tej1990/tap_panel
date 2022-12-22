@@ -1,0 +1,52 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>Sample Web Page</title>
+    <style type="text/css">
+        div {
+            background-color:#FFCC99
+        }
+        h1, h3 {
+            color:red;
+            text-align: center;
+        }
+        .item {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<br><br>
+<h1>Android WebView</h1>
+<h3 id="welcome"></h3>
+<input  class="item" type="text" placeholder="Enter Name" id="nameField"/>
+<br><br>
+<button  class="item" onClick="showAndroidToast()">Show Android Toast</button>
+<br><br>
+<button  class="item" onClick="setMessageFromHtml('Hello, From HTML')">Set Message From Html</button>
+<br><br>
+<button class="item" onClick="getMessageFromAndroid()">Get Message From Android</button>
+<script src="./script.js"></script>
+<script src="./vanila.js"></script>
+<script>
+		window.addEventListener('load', function () {
+			vanillaCalendar.init({
+				disablePastDays: true
+			});
+		})
+	</script>
+<!--<script type="text/javascript">
+    function showAndroidToast() {
+        let nameField = document.getElementById('nameField').value;
+        Android.showToast(nameField);
+    }
+    function setMessageFromHtml(param) {
+       document.getElementById('welcome').innerHTML = param;
+    }
+    function getMessageFromAndroid() {
+       document.getElementById('welcome').innerHTML = Android.getMessage();
+    }
+</script>-->
+</body>
